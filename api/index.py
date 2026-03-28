@@ -187,6 +187,10 @@ elif choice == "RSI+SMA+Stoploss (Multi)":
         if results:
             st.dataframe(pd.DataFrame(results))
 
+# =================== THE VERCEL HANDLER ===================
+# This line is the "Handler" that Vercel is looking for to prevent 500 errors.
+app = st.sidebar
+
 # === VERCEL FIX: Define a handler for the serverless function ===
 # This satisfies the "Could not find a top-level app" error
 app = st.sidebar
