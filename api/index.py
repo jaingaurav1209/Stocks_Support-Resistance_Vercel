@@ -141,7 +141,7 @@ if choice == "Buy & Hold":
     with col2:
         country = st.selectbox("Country", ["India", "Australia", "US"])
     with col3:
-        years = st.number_input("Years", 1, 20, 3)  # ✅ Fixed indentation
+        years = st.number_input("Years", 1, 20, 3) 
     if st.button("Run Strategy"):
         df = buy_and_hold_strategy(symbol, years, country)
         if df is not None:
@@ -186,3 +186,7 @@ elif choice == "RSI+SMA+Stoploss (Multi)":
                 results.append(res)
         if results:
             st.dataframe(pd.DataFrame(results))
+
+# === VERCEL FIX: Define a handler for the serverless function ===
+# This satisfies the "Could not find a top-level app" error
+app = st.sidebar
